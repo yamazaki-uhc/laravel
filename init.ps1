@@ -8,3 +8,7 @@ docker-compose exec laravel rm -rf .github
 docker-compose exec laravel composer install
 docker-compose exec laravel chmod -R 777 storage
 Remove-Item init.ps1
+Remove-Item .git -Recurse -Force
+git init
+git add .
+git commit -m "first commit"
