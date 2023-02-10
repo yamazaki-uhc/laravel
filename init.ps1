@@ -7,6 +7,7 @@ docker-compose exec app rm -rf .git
 docker-compose exec app rm -rf .github
 docker-compose exec app composer install
 docker-compose exec app chmod -R 777 storage
+docker-compose exec app composer require --dev barryvdh/laravel-debugbar
 Remove-Item init.ps1
 Remove-Item .git -Recurse -Force
 git init
