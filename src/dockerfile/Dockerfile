@@ -1,4 +1,5 @@
-FROM php:8.2-apache
+ARG PHP_VERSION
+FROM php:${PHP_VERSION}-apache
 
 COPY --from=node:18 /usr/local/bin/node /usr/local/bin
 COPY --from=node:18 /usr/local/lib/node_modules/ /usr/local/lib/node_modules/
