@@ -4,13 +4,13 @@ services:
   app:
     build:
       context: ./src/dockerfile
-      args:
-        PHP_VERSION: "${PHP_VERSION:-8.1}"
     ports:
       - 8000:80
       - 5173:5173
     volumes:
       - ./src/laravel:/var/www/html
+      - laravel_vendor:/var/www/html/vendor
+      - laravel_node_modules:/var/www/html/node_modules 
     environment:
       - APP_DEBUG=${APP_DEBUG:-true}
       - APP_KEY=${APP_KEY:-12345678901234567890123456789012}
@@ -39,3 +39,7 @@ services:
    image: 'mailhog/mailhog:latest'
    ports:
      - '8025:8025'
+
+volumes:
+  laravel_vendor:
+  laravel_node_modules:
