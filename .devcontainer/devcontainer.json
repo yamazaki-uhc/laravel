@@ -38,7 +38,13 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"xdebug.php-debug"
+				"xdebug.php-debug",
+				"mhutchie.git-graph",
+				"eamodio.gitlens",
+				"bmewburn.vscode-intelephense-client",
+				"onecentlin.laravel-blade",
+				"amiralizadeh9480.laravel-extra-intellisense",
+				"streetsidesoftware.code-spell-checker"
 			]
 		}
 	}
