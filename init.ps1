@@ -20,6 +20,7 @@ Remove-Item .git -Recurse -Force
 Move-Item .vscode src/laravel
 Move-Item src/laravel/vite.config.js src/laravel/vite.config.js_bk
 Move-Item src/laravel/vite.config.js_template src/laravel/vite.config.js
+echo "src/laravel" >> .gitignore
 git init
 git add .
 git commit -m "first commit"
