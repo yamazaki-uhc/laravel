@@ -17,6 +17,7 @@ docker-compose exec app composer require --dev barryvdh/laravel-debugbar
 Remove-Item init.ps1
 Remove-Item .env
 Remove-Item .git -Recurse -Force
+Move-Item .vscode src/laravel
 git init
 git add .
 git commit -m "first commit"
