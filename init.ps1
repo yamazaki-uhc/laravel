@@ -3,6 +3,13 @@ $PHP_VERSION="8.2.2"
 $LARAVEL_VERSION="10"
 # ----------------
 
+$path = @('src/laravel/init.sh', 'src/laravel/vite.config.js_template')
+foreach($p in $path)
+{
+    $lfText = [System.IO.File]::ReadAllText($p).Replace("`r`n", "`n")
+    [System.IO.File]::WriteAllText($p, $lfText)
+}
+
 echo "FROM php:$PHP_VERSION-apache" > src/dockerfile/Dockerfile
 cat src/dockerfile/Dockerfile_template >> src/dockerfile/Dockerfile
 rm src/dockerfile/Dockerfile_template
