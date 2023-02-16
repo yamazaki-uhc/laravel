@@ -20,7 +20,7 @@ docker-compose exec app git clone --depth 1 -b "$LARAVEL_VERSION.x" https://gith
 docker-compose exec app bash init.sh
 docker-compose exec app composer install
 docker-compose exec app chmod -R 777 storage
-docker-compose exec app composer require --dev barryvdh/laravel-debugbar
+docker-compose exec app composer require --dev barryvdh/laravel-debugbar barryvdh/laravel-ide-helper
 docker-compose exec app npm i
 Remove-Item init.ps1
 Remove-Item .git -Recurse -Force
