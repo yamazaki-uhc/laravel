@@ -16,7 +16,7 @@ rm src/dockerfile/Dockerfile_template
 New-Item db/data -ItemType Directory
 Set-ItemProperty db/my.cnf -Name IsReadOnly -Value $true
 docker-compose up -d --build
-docker-compose exec app git clone --depth 1 -b "$LARAVEL_VERSION.x" https://github.com/laravel/laravel.git tmp
+docker-compose exec app git clone --shallow-exclude "v$LARAVEL_VERSION.0.0" -b "$LARAVEL_VERSION.x" https://github.com/laravel/laravel.git tmp
 docker-compose exec app bash init.sh
 docker-compose exec app composer install
 docker-compose exec app chmod -R 777 storage

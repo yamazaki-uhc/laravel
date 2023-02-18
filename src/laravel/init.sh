@@ -3,6 +3,6 @@
 mv tmp/* ./
 mv tmp/.* ./
 rm -rf tmp
-rm -rf .git
-rm -rf .github
 rm init.sh
+git remote rename origin laravel
+git switch -c main
