@@ -3,7 +3,7 @@ $PHP_VERSION="8.2.2"
 $LARAVEL_VERSION="10"
 # ----------------
 
-$path = @('src/laravel/init.sh', 'src/laravel/vite.config.js_template')
+$path = @('src/laravel/init.sh', 'src/laravel/vite.config.js_template', 'entrypoint.sh')
 foreach($p in $path)
 {
     $lfText = [System.IO.File]::ReadAllText($p).Replace("`r`n", "`n")
