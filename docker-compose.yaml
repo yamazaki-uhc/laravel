@@ -36,7 +36,7 @@ services:
       TZ: 'Asia/Tokyo'
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
-      - ./db/data:/var/lib/mysql
+      - laravel_db_data:/var/lib/mysql
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
       - ${DB_PORT:-3306}:3306
@@ -48,6 +48,7 @@ services:
 volumes:
   laravel_vendor:
   laravel_node_modules:
+  laravel_db_data:
 
 secrets:
   host_ssh_key:
