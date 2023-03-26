@@ -13,7 +13,6 @@ foreach($p in $path)
 echo "FROM php:$PHP_VERSION-apache" > src/dockerfile/Dockerfile
 cat src/dockerfile/Dockerfile_template >> src/dockerfile/Dockerfile
 rm src/dockerfile/Dockerfile_template
-New-Item db/data -ItemType Directory
 Set-ItemProperty db/my.cnf -Name IsReadOnly -Value $true
 docker-compose up -d --build
 docker-compose exec app git clone --shallow-exclude "v$LARAVEL_VERSION.0.0" -b "$LARAVEL_VERSION.x" https://github.com/laravel/laravel.git tmp
