@@ -14,16 +14,6 @@ services:
       - laravel_node_modules:/var/www/html/node_modules 
     secrets:
       - host_ssh_key
-    environment:
-      - APP_DEBUG=${APP_DEBUG:-true}
-      - APP_KEY=${APP_KEY:-12345678901234567890123456789012}
-      - APP_ENV=local
-      - DB_HOST=db
-      - DB_DATABASE=laravel
-      - DB_USERNAME=laravel
-      - DB_PASSWORD=passwd
-      - MAIL_HOST=mailhog
-      - MAIL_PORT=1025
     entrypoint: "/tmp/entrypoint.sh"
     command: "apache2-foreground"
   db:
