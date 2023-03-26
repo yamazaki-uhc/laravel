@@ -27,6 +27,7 @@ services:
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
       - laravel_db_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
       - ${DB_PORT:-3306}:3306

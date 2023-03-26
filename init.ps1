@@ -21,10 +21,11 @@ Remove-Item init.ps1
 Remove-Item .git -Recurse -Force
 Move-Item .vscode src/laravel
 Move-Item .env.laravel src/laravel/.env
-Move-Item src/laravel/vite.config.js src/laravel/vite.config.js_bk
-Move-Item src/laravel/vite.config.js_template src/laravel/vite.config.js
+Move-Item .env.testing.laravel src/laravel/.env.testing
+Move-Item src/laravel/vite.config.js_template src/laravel/vite.config.js_template
 echo "src/laravel" >> .gitignore
 git init
 git add .
 git commit -m "first commit"
 docker-compose exec app php artisan key:generate
+docker-compose exec app php artisan key:generate --env=testing
