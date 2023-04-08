@@ -24,4 +24,8 @@ RUN apt-get update && apt-get install -y \
 COPY php.ini /usr/local/etc/php/
 COPY 000-default.conf /etc/apache2/sites-enabled/
 
+ENV LANG=C.UTF-8 \
+    LANGUAGE=en_US \
+    TZ=Asia/Tokyo
+
 WORKDIR /var/www/html
