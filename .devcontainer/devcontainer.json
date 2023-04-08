@@ -45,7 +45,8 @@
 				"onecentlin.laravel-blade",
 				"amiralizadeh9480.laravel-extra-intellisense",
 				"streetsidesoftware.code-spell-checker",
-				"neilbrayfield.php-docblocker"
+				"neilbrayfield.php-docblocker",
+				"GitHub.copilot"
 			]
 		}
 	}
