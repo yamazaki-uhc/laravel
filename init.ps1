@@ -1,5 +1,5 @@
 # ----------------
-$PHP_VERSION="8.2.2"
+$PHP_VERSION="8.2.5"
 $LARAVEL_VERSION="10"
 # ----------------
 
