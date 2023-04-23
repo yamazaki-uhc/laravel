@@ -5,13 +5,13 @@ services:
     build:
       context: ./src/dockerfile
     ports:
-      - 8000:80
+      - ${HTTP_PORT:-8000}:80
       - 5173:5173
     volumes:
       - ./src/laravel:/var/www/html
       - ./entrypoint.sh:/tmp/entrypoint.sh
-      - laravel_vendor:/var/www/html/vendor
-      - laravel_node_modules:/var/www/html/node_modules 
+      - vendor:/var/www/html/vendor
+      - node_modules:/var/www/html/node_modules 
     secrets:
       - host_ssh_key
     entrypoint: "/tmp/entrypoint.sh"
@@ -26,7 +26,7 @@ services:
       TZ: 'Asia/Tokyo'
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
-      - laravel_db_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
@@ -37,9 +37,9 @@ services:
      - '8025:8025'
 
 volumes:
-  laravel_vendor:
-  laravel_node_modules:
-  laravel_db_data:
+  vendor:
+  node_modules:
+  db_data:
 
 secrets:
   host_ssh_key:
