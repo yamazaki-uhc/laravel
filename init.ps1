@@ -1,6 +1,6 @@
 # ----------------
-$PHP_VERSION="8.2.5"
-$LARAVEL_VERSION="10"
+$PHP_VERSION="8.3.4"
+$LARAVEL_VERSION="11"
 # ----------------
 
 $path = @('src/laravel/init.sh', 'src/laravel/vite.config.js_template', 'entrypoint.sh')
